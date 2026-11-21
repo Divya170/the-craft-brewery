@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Our Products — The Craft Brewery</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="/_blob/35a35548b87b64c969ab7ab13d4e4c06">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=DM+Serif+Display:ital@0;1&amp;family=DM+Sans:opsz,wght@9..40,400..700&amp;display=swap" rel="stylesheet">
+<style>body{margin:0;background:#20211F}</style>
+</helmet>
+<div style="font-family: var(--fb); color: var(--white); background: var(--char)">
+<a class="skip" href="#lineup">Skip to products</a>
+<div style="position: sticky; top: 0; z-index: 60; height: 0"><dc-import name="Header" active="products" overlay="{{ true }}" hint-size="100%,88px"></dc-import></div>
+
+<main id="main">
+  <section class="smoke grain" aria-labelledby="p-h" style="position: relative; overflow: hidden; padding-top: 150px; padding-bottom: clamp(56px, 7vw, 104px)">
+    <div class="wrap g12" style="align-items: end">
+      <div class="stack" style="grid-column: 1 / span 7; gap: 24px; position: relative; z-index: 2">
+        <p class="label in">Our products</p>
+        <h1 id="p-h" class="d-hero in d1">Explore<br>the craft<span style="color: var(--copper)">.</span></h1>
+        <p class="lead in d2">Discover the beers and brewing character of The Craft Brewery.</p>
+        <div class="row in d3" style="gap: 12px"><span class="tbs">Sample products until the real lineup is supplied</span></div>
+      </div>
+      <figure class="ph in d2" style="grid-column: 8 / span 5; aspect-ratio: 4 / 5; border: 1px solid var(--line-d)">
+        <img class="kb" src="/_blob/c3fa6c011aca315d748c856e7727204c" alt="A flight of four beers, pale gold to near black, on a wooden paddle" width="1000" height="1250" fetchpriority="high">
+        <span class="corner tl" aria-hidden="true"></span><span class="corner br" aria-hidden="true"></span>
+        <figcaption class="cap">Product photo to be supplied</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="lineup" class="dark grain sec" aria-labelledby="l-h" style="padding-top: clamp(48px, 6vw, 88px)">
+    <div class="wrap stack" style="gap: clamp(28px, 4vw, 48px)">
+      <div class="between" style="align-items: center; gap: 18px; padding-bottom: 22px; border-bottom: 1px solid var(--line-d)">
+        <h2 id="l-h" class="sr-only">Product lineup</h2>
+        <div class="chips" role="group" aria-label="Filter by beer style">
+          <sc-for list="{{ cats }}" as="c" hint-placeholder-count="6">
+            <button type="button" class="chip" aria-pressed="{{ c.on }}" onClick="{{ c.pick }}">{{ c.label }} <span class="n">{{ c.n }}</span></button>
+          </sc-for>
+        </div>
+        <div class="row" style="gap: 16px">
+          <p class="small muted" aria-live="polite">{{ countLabel }}</p>
+          <sc-if value="{{ filtered }}" hint-placeholder-val="{{ false }}"><button type="button" class="tlink" onClick="{{ reset }}"><span>Reset filter</span></button></sc-if>
+        </div>
+      </div>
+
+      <sc-if value="{{ isLoading }}" hint-placeholder-val="{{ false }}">
+        <div class="pgrid" aria-busy="true" aria-label="Loading products">
+          <sc-for list="{{ skel }}" as="k" hint-placeholder-count="4"><div style="grid-column: span {{ k.span }}; display: flex; flex-direction: column; gap: 14px"><div style="aspect-ratio: 4 / 5; background: var(--char2)"></div><div style="height: 12px; width: 30%; background: var(--char2)"></div><div style="height: 28px; width: 70%; background: var(--char2)"></div></div></sc-for>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ hasItems }}" hint-placeholder-val="{{ true }}">
+        <div class="pgrid">
+          <sc-for list="{{ items }}" as="p" hint-placeholder-count="8">
+            <button type="button" class="{{ p.cls }}" style="grid-column: span {{ p.span }}; animation-delay: {{ p.delay }}ms" aria-haspopup="dialog" onClick="{{ p.open }}">
+              <div class="ph"><img src="{{ p.img }}" alt="{{ p.alt }}" width="900" height="1100" loading="lazy"><span class="sample">Sample</span></div>
+              <span class="pc-cat">{{ p.c }}</span>
+              <span class="pc-name">{{ p.n }}</span>
+              <span class="pc-desc">{{ p.short }}</span>
+              <span class="row" style="gap: 10px"><span class="tbs">ABV &amp; IBU to be supplied</span></span>
+              <span class="more">View details <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
+            </button>
+          </sc-for>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isEmpty }}" hint-placeholder-val="{{ false }}">
+        <div class="stack" style="gap: 20px; align-items: flex-start; padding: clamp(32px, 5vw, 64px); border: 1px dashed var(--line-d)">
+          <p class="label plain">Nothing here yet</p>
+          <h3 class="d-m">No beers in this style right now.</h3>
+          <p class="muted" style="max-width: 34em">This style may return. In the meantime, see the full lineup, or ask the brewery what’s pouring when you visit.</p>
+          <div class="row btn-row-m"><button type="button" class="btn btn-copper" onClick="{{ reset }}">Show All Products</button><a class="btn btn-ghost" href="Visit.dc.html">Plan Your Visit</a></div>
+        </div>
+      </sc-if>
+      <p class="xs muted">An informational lineup only: there is no online ordering, cart or delivery.</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="pv-h" style="position: relative; overflow: hidden; background: var(--smoke)">
+    <img src="/_blob/e35077752029db648d6e04a43c34e831" alt="" width="1200" height="800" loading="lazy" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .45">
+    <div aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(0deg, rgba(21,22,20,.95), rgba(21,22,20,.55))"></div>
+    <div class="wrap sec stack" style="position: relative; gap: 28px; align-items: flex-start">
+      <p class="label">Visit</p>
+      <h2 id="pv-h" class="d-xl" style="max-width: 14ch">Discover the brewery <span style="color: var(--copper-l)">behind the beer.</span></h2>
+      <a class="btn btn-copper" href="Visit.dc.html">Visit The Brewery <svg class="arr" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+    </div>
+  </section>
+</main>
+
+<sc-if value="{{ detailOpen }}" hint-placeholder-val="{{ false }}">
+  <div class="drawer" role="dialog" aria-modal="true" aria-labelledby="pd-h" onKeyDown="{{ onKey }}">
+    <button type="button" class="scrim" tabindex="-1" aria-label="Close product details" onClick="{{ close }}"></button>
+    <div class="panel grain">
+      <div class="between" style="align-items: center; padding: 18px clamp(20px, 3vw, 40px); border-bottom: 1px solid var(--line-d); position: sticky; top: 0; background: var(--char); z-index: 3">
+        <p class="meta">{{ dNo }} of {{ total }} · {{ d.c }}</p>
+        <div class="row" style="gap: 8px">
+          <button type="button" class="icon-btn" aria-label="Previous product" onClick="{{ dPrev }}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"></path></svg></button>
+          <button type="button" class="icon-btn" aria-label="Next product" onClick="{{ dNext }}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></button>
+          <button type="button" class="icon-btn" aria-label="Close product details" autofocus onClick="{{ close }}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></button>
+        </div>
+      </div>
+      <div class="split" style="gap: clamp(24px, 4vw, 56px); padding: clamp(20px, 3vw, 40px); align-items: start">
+        <figure class="ph" style="aspect-ratio: 9 / 11; border: 1px solid var(--line-d)"><img src="{{ d.img }}" alt="{{ d.alt }}" width="900" height="1100"><span class="sample">Sample</span><figcaption class="cap">Product photo to be supplied</figcaption></figure>
+        <div class="stack" style="gap: 22px">
+          <p class="pc-cat" style="color: var(--copper-l); font: 600 .72rem/1 var(--fb); letter-spacing: .22em; text-transform: uppercase">{{ d.c }}</p>
+          <h2 id="pd-h" class="d-l">{{ d.n }}</h2>
+          <p class="lead">{{ d.long }}</p>
+          <dl class="specs">
+            <div><dt>ABV</dt><dd class="na">To be supplied</dd></div>
+            <div><dt>IBU</dt><dd class="na">To be supplied</dd></div>
+          </dl>
+          <dl class="stack" style="gap: 0">
+            <div class="info" style="grid-template-columns: 140px minmax(0, 1fr); border-color: var(--line-d)"><dt class="meta">Ingredients</dt><dd><span class="tbs">To be supplied</span></dd></div>
+            <div class="info" style="grid-template-columns: 140px minmax(0, 1fr); border-color: var(--line-d)"><dt class="meta">Tasting notes</dt><dd><span class="tbs">To be supplied</span></dd></div>
+            <div class="info" style="grid-template-columns: 140px minmax(0, 1fr); border-color: var(--line-d); border-bottom: 1px solid var(--line-d)"><dt class="meta">Serving</dt><dd><span class="tbs">To be supplied</span></dd></div>
+          </dl>
+          <p class="xs muted">Only details verified by The Craft Brewery are published. Empty rows are hidden on the live site.</p>
+          <div class="row btn-row-m"><a class="btn btn-copper" href="Visit.dc.html">Visit The Brewery</a><button type="button" class="btn btn-ghost" onClick="{{ close }}">Back to the lineup</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</sc-if>
+<dc-import name="Footer" hint-size="100%,640px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"preview":{"editor":"enum","options":["live","loading","empty"],"default":"live","section":"States"},"$preview":{"width":1440,"height":3700}}'>
+class Component extends DCLogic {
+  constructor(p) { super(p); this.state = { cat: 'All', open: -1 }; }
+  renderVals() {
+    const IMG = { Lager: '/_blob/6e0fd21563c40ae7ae8b7a435a5f9384', Ale: '/_blob/beb7fd2afab6c351a287497441220832', IPA: '/_blob/eab2e67dd4e37f7381371c9702abd93f', Stout: '/_blob/fd5d94cc64d56ad329fcecc6db473155', 'Seasonal Brew': '/_blob/223b102bcac50ab8b86fe40dd4d9ee95' };
+    const RAW = [['Lager', 1], ['IPA', 1], ['Ale', 1], ['Stout', 1], ['Lager', 2], ['IPA', 2], ['Ale', 2], ['Seasonal Brew', 1]];
+    const ALL = RAW.map(([c, k]) => ({
+      c, n: 'Sample ' + (c === 'Seasonal Brew' ? 'Seasonal' : c) + ' No. ' + k, img: IMG[c],
+      alt: 'Placeholder image: a glass of ' + c.toLowerCase(),
+      short: 'A placeholder for a real ' + c.toLowerCase() + '. Name and description to be supplied.',
+      long: 'This is a sample entry standing in for one of The Craft Brewery’s beers. Its real name, style description, ingredients and tasting notes will be added once the brewery supplies and verifies them.',
+    }));
+    const order = ['Lager', 'Ale', 'IPA', 'Stout', 'Seasonal Brew'];
+    const present = order.filter((c) => ALL.some((p) => p.c === c));
+    const mode = this.props.preview ?? 'live'; const s = this.state;
+    const list = mode === 'empty' ? [] : s.cat === 'All' ? ALL : ALL.filter((p) => p.c === s.cat);
+    const spans = [7, 5, 4, 4, 4, 5, 7, 6];
+    const open = s.open >= 0 ? list[s.open] : null;
+    const close = () => this.setState({ open: -1 });
+    return {
+      cats: [{ label: 'All products', key: 'All', n: ALL.length }].concat(present.map((c) => ({ label: c === 'Seasonal Brew' ? 'Seasonal Brews' : c + 's', key: c, n: ALL.filter((p) => p.c === c).length })))
+        .map((c) => ({ ...c, on: s.cat === c.key ? 'true' : 'false', pick: () => this.setState({ cat: c.key, open: -1 }) })),
+      filtered: s.cat !== 'All', reset: () => this.setState({ cat: 'All' }),
+      countLabel: list.length + (list.length === 1 ? ' beer' : ' beers') + ' · samples',
+      isLoading: mode === 'loading', hasItems: mode === 'live' && list.length > 0, isEmpty: mode === 'empty' || (mode === 'live' && list.length === 0),
+      skel: [{ span: 7 }, { span: 5 }, { span: 4 }, { span: 4 }],
+      items: list.map((p, i) => ({ ...p, span: list.length < 3 ? 6 : spans[i % spans.length], cls: (spans[i % spans.length] >= 6 && list.length >= 3) ? 'pcard wide' : 'pcard', delay: i * 60, open: () => this.setState({ open: i }) })),
+      detailOpen: !!open, d: open || ALL[0], dNo: s.open + 1, total: list.length,
+      dPrev: () => this.setState({ open: (s.open - 1 + list.length) % list.length }), dNext: () => this.setState({ open: (s.open + 1) % list.length }),
+      close, onKey: (e) => { if (e.key === 'Escape') close(); },
+    };
+  }
+}
+</script>
+</body>
+</html>

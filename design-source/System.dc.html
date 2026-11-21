@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Design system — The Craft Brewery</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="/_blob/35a35548b87b64c969ab7ab13d4e4c06">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=DM+Serif+Display:ital@0;1&amp;family=DM+Sans:opsz,wght@9..40,400..700&amp;display=swap" rel="stylesheet">
+<style>body{margin:0;background:#20211F}</style>
+</helmet>
+<div class="grain" style="width: 1440px; box-sizing: border-box; padding: 72px 80px 96px; background: var(--char); color: var(--white); font-family: var(--fb); display: flex; flex-direction: column; gap: 72px">
+  <header class="between" style="align-items: flex-end">
+    <div class="stack" style="gap: 16px"><p class="label">Design system v1</p><h1 class="d-xl">Industrial craft × <span class="ital" style="font-size: .8em">rustic modern</span></h1></div>
+    <p class="muted" style="max-width: 34em">Dark, atmospheric surfaces lead; warm cream sections give the eye a rest; copper is saved for the moments that matter: the visit CTA, active states and key figures.</p>
+  </header>
+
+  <section class="stack" style="gap: 22px">
+    <h2 class="meta">01 · Wordmark</h2>
+    <div style="display: grid; grid-template-columns: 2fr 2fr 1fr; gap: 20px">
+      <div style="padding: 56px; background: var(--smoke); display: grid; place-items: center; border: 1px solid var(--line-d)">
+        <span class="brand" style="transform: scale(1.6)"><svg width="44" height="44" viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="21" fill="none" stroke="#A58A61" stroke-width="1.2"></circle><circle cx="22" cy="22" r="17.5" fill="none" stroke="#A58A61" stroke-width=".6" stroke-dasharray="1.5 2.5"></circle><path d="M22 10.5v3.2" stroke="#D08E60" stroke-width="1.6" stroke-linecap="round"></path><path d="M22 13.6c-4.4 2.6-5.4 9.4-0.1 17.6 5.3-8.2 4.4-15 .1-17.6z" fill="none" stroke="#D08E60" stroke-width="1.6" stroke-linejoin="round"></path><path d="M18.4 18.2 22 20.4l3.6-2.2M17.8 22.6 22 25.2l4.2-2.6M19.2 27.2 22 29l2.8-1.8" fill="none" stroke="#D08E60" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="wm"><small>The</small><b>Craft Brewery</b></span></span>
+      </div>
+      <div class="light" style="padding: 56px; display: grid; place-items: center">
+        <span class="brand" style="transform: scale(1.6); color: var(--char)"><svg width="44" height="44" viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="21" fill="none" stroke="#20211F" stroke-width="1.2"></circle><circle cx="22" cy="22" r="17.5" fill="none" stroke="#20211F" stroke-width=".6" stroke-dasharray="1.5 2.5"></circle><path d="M22 10.5v3.2" stroke="#8E5532" stroke-width="1.6" stroke-linecap="round"></path><path d="M22 13.6c-4.4 2.6-5.4 9.4-0.1 17.6 5.3-8.2 4.4-15 .1-17.6z" fill="none" stroke="#8E5532" stroke-width="1.6" stroke-linejoin="round"></path><path d="M18.4 18.2 22 20.4l3.6-2.2M17.8 22.6 22 25.2l4.2-2.6M19.2 27.2 22 29l2.8-1.8" fill="none" stroke="#8E5532" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="wm"><small style="color: var(--copper-d)">The</small><b>Craft Brewery</b></span></span>
+      </div>
+      <div style="background: var(--copper); display: grid; place-items: center"><svg width="88" height="88" viewBox="0 0 44 44" role="img" aria-label="Hop badge mark"><circle cx="22" cy="22" r="21" fill="none" stroke="#151614" stroke-width="1.2"></circle><path d="M22 10.5v3.2" stroke="#151614" stroke-width="1.6" stroke-linecap="round"></path><path d="M22 13.6c-4.4 2.6-5.4 9.4-0.1 17.6 5.3-8.2 4.4-15 .1-17.6z" fill="none" stroke="#151614" stroke-width="1.6" stroke-linejoin="round"></path><path d="M18.4 18.2 22 20.4l3.6-2.2M17.8 22.6 22 25.2l4.2-2.6M19.2 27.2 22 29l2.8-1.8" fill="none" stroke="#151614" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
+    </div>
+    <p class="small muted">A hop cone inside a stamped badge ring, like a brewer’s mark on a barrel head. The badge works alone at favicon size; the stacked wordmark sits in the header and footer.</p>
+  </section>
+
+  <section class="stack" style="gap: 22px">
+    <h2 class="meta">02 · Colour, roles &amp; distribution</h2>
+    <div style="display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 14px">
+      <sc-for list="{{ colors }}" as="c" hint-placeholder-count="12">
+        <div class="stack" style="gap: 10px">
+          <div style="height: 96px; background: {{ c.hex }}; border: 1px solid var(--line-d)"></div>
+          <div class="stack" style="gap: 2px"><b class="small">{{ c.name }}</b><code class="xs muted">{{ c.hex }}</code><span class="xs muted">{{ c.use }}</span></div>
+        </div>
+      </sc-for>
+    </div>
+    <div class="stack" style="gap: 8px">
+      <div style="display: flex; height: 22px"><span style="flex: 50; background: var(--char); border: 1px solid var(--line-d)"></span><span style="flex: 25; background: var(--cream)"></span><span style="flex: 15; background: var(--walnut)"></span><span style="flex: 10; background: var(--copper)"></span></div>
+      <p class="xs muted">50% charcoal &amp; dark surfaces · 25% cream &amp; oat · 15% photography &amp; natural materials · 10% copper, brass &amp; accents</p>
+    </div>
+    <div class="tbs-note small"><b style="color: var(--white)">Contrast refinements (WCAG AA):</b> copper buttons carry smoked-black text (4.9:1). Copper is too light for small text on charcoal (4.4:1) and on cream (3.0:1), so copper text uses #D08E60 on dark (5.9:1) and #8E5532 on cream (4.9:1). Sage stays decorative (3.8:1 on cream). Cream on charcoal is 15:1.</div>
+  </section>
+
+  <section class="stack" style="gap: 22px">
+    <h2 class="meta">03 · Typography: Bebas Neue · DM Serif Display · DM Sans</h2>
+    <div style="display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 20px 40px; align-items: baseline">
+      <span class="xs muted">Hero · Bebas 67→200px / .86</span><p class="d-hero" style="font-size: 9rem">Crafted with character.</p>
+      <span class="xs muted">XL · Bebas 51→122px</span><p class="d-xl">Rooted in the craft.</p>
+      <span class="xs muted">L · Bebas 42→86px</span><p class="d-l">More than what’s in the <span class="ital" style="font-size: .82em">glass.</span></p>
+      <span class="xs muted">M · Bebas 32→53px</span><p class="d-m">Fermentation</p>
+      <span class="xs muted">Editorial · DM Serif 22–48px</span><p style="font: 400 1.6rem/1.4 var(--fs)">“[A line from the people behind the brewery.]”</p>
+      <span class="xs muted">Accent · DM Serif italic, copper</span><p class="d-l"><span class="ital">passion</span></p>
+      <span class="xs muted">Lead · DM Sans 17→20px</span><p class="lead">Discover the craft, character, and brewing spirit behind The Craft Brewery.</p>
+      <span class="xs muted">Body · DM Sans 17px / 1.65</span><p>A brewery is a place you can feel: the warmth of the brewhouse and the first pour of the day.</p>
+      <span class="xs muted">Label · DM Sans 600 12px · +26%</span><p class="label">Brewing philosophy</p>
+      <span class="xs muted">Index · Bebas outline</span><p class="idx">03</p>
+    </div>
+  </section>
+
+  <section style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px">
+    <div class="stack" style="gap: 20px; padding: 32px; background: var(--smoke); border: 1px solid var(--line-d)">
+      <h2 class="meta">04 · Buttons &amp; links (dark)</h2>
+      <div class="row"><a class="btn btn-copper" href="Visit.dc.html">Plan Your Visit <svg class="arr" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a><a class="btn btn-ghost" href="Story.dc.html">Secondary</a><a class="tlink" href="Gallery.dc.html"><span>Text link</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a></div>
+      <div class="row"><span class="btn btn-copper" style="outline: 2px solid var(--copper-l); outline-offset: 3px">Focus</span><button type="button" class="btn btn-copper" disabled>Disabled</button><button type="button" class="btn btn-copper" disabled aria-busy="true"><span class="spin" aria-hidden="true"></span>Sending…</button></div>
+      <div class="chips"><button type="button" class="chip" aria-pressed="true">All products <span class="n">8</span></button><button type="button" class="chip" aria-pressed="false">IPAs <span class="n">2</span></button><span class="tbs">To be supplied</span><span class="state-tag">State preview</span></div>
+    </div>
+    <div class="light stack" style="gap: 20px; padding: 32px">
+      <h2 class="meta">05 · Forms &amp; light surfaces</h2>
+      <div class="row"><a class="btn btn-dark" href="Visit.dc.html">Dark</a><a class="btn btn-ghost" href="Visit.dc.html">Outline</a></div>
+      <div class="f2">
+        <div class="field"><label for="ds1">Default</label><input id="ds1" class="input" placeholder="Your name"></div>
+        <div class="field"><label for="ds2">Error</label><input id="ds2" class="input" value="name@" aria-invalid="true" aria-describedby="ds2e"><p class="err" id="ds2e">Enter an email like name@example.com.</p></div>
+      </div>
+      <div class="notice n-warn small"><b>Nothing has been sent yet.</b></div>
+    </div>
+  </section>
+
+  <section class="stack" style="gap: 22px">
+    <h2 class="meta">06 · Product card, specs &amp; timeline node</h2>
+    <div style="display: grid; grid-template-columns: 300px 1fr; gap: 40px; align-items: start">
+      <button type="button" class="pcard" style="animation: none">
+        <div class="ph"><img src="/_blob/eab2e67dd4e37f7381371c9702abd93f" alt="Placeholder image: a glass of IPA" width="900" height="1100"><span class="sample">Sample</span></div>
+        <span class="pc-cat">IPA</span><span class="pc-name">Sample IPA No. 1</span>
+        <span class="more">View details <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
+      </button>
+      <div class="stack" style="gap: 28px">
+        <dl class="specs"><div><dt>ABV (verified)</dt><dd>[0.0%]</dd></div><div><dt>IBU (verified)</dt><dd>[00]</dd></div><div><dt>Not supplied</dt><dd class="na">To be supplied</dd></div></dl>
+        <p class="small muted">Specs render only when the brewery has supplied and verified them. Images are 4:5 product portraits, with 16:11 for wide feature cards. Corners stay square; borders are hairline brass at 28%.</p>
+        <div class="row" style="gap: 28px">
+          <span class="stage" style="display: block; padding: 0"><span class="node" style="display: grid">03</span></span>
+          <span class="stage active" style="display: block; padding: 0"><span class="node" style="display: grid">04</span></span>
+          <span class="small muted">Timeline nodes: brass outline → copper fill once reached. Progress fills the connecting line as you scroll.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px">
+    <div class="stack" style="gap: 12px; padding: 32px; border: 1px solid var(--line-d)">
+      <h2 class="meta">07 · Motion</h2>
+      <ul class="stack small muted" style="gap: 8px; padding-left: 18px">
+        <li>Hero: 3 images cross-fade every 7s over a slow 18s zoom. Prev/next, dots and pause controls; pauses on hover, focus and hidden tabs.</li>
+        <li>Story strip: a slow 60s marquee with a pause button; it stops on hover and focus.</li>
+        <li>Reveals: 1s rise on entry using CSS view timelines; the timeline fill and active node track scroll.</li>
+        <li>Hovers: 300–400ms colour changes; images zoom to 1.05 over 1.2s.</li>
+        <li>prefers-reduced-motion stops all of it. The main gallery never auto-advances.</li>
+      </ul>
+    </div>
+    <div class="stack" style="gap: 12px; padding: 32px; border: 1px solid var(--line-d)">
+      <h2 class="meta">08 · Breakpoints</h2>
+      <dl style="display: grid; grid-template-columns: 130px 1fr; gap: 8px 18px; font-size: .92rem">
+        <dt><b>1440+</b></dt><dd class="muted">Full-bleed heroes, 12-column asymmetric grids, mixed product sizes.</dd>
+        <dt><b>1024–1439</b></dt><dd class="muted">Tighter nav spacing, reduced type scale.</dd>
+        <dt><b>768–1023</b></dt><dd class="muted">Drawer nav, stacked splits, 2-up products, timeline moves to the left rail.</dd>
+        <dt><b>375–767</b></dt><dd class="muted">Single column, swipeable filter chips, stacked full-width CTAs, 1-column gallery.</dd>
+        <dt><b>320–374</b></dt><dd class="muted">Smaller display type, 16px gutters, no overflow.</dd>
+      </dl>
+    </div>
+  </section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":3100}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return { colors: [
+      { name: 'Smoked Black', hex: '#151614', use: 'Nav, footer, deepest bands' },
+      { name: 'Deep Charcoal', hex: '#20211F', use: 'Primary dark surface' },
+      { name: 'Charcoal 2', hex: '#2A2B28', use: 'Image wells, skeletons' },
+      { name: 'Warm Walnut', hex: '#63442F', use: 'Wood, secondary surface' },
+      { name: 'Burnished Copper', hex: '#B87549', use: 'Primary CTA fill, active' },
+      { name: 'Copper Light', hex: '#D08E60', use: 'Copper text on dark' },
+      { name: 'Copper Deep', hex: '#8E5532', use: 'Copper text on cream' },
+      { name: 'Aged Brass', hex: '#A58A61', use: 'Hairlines, placeholders, numerals' },
+      { name: 'Vintage Cream', hex: '#F0E8D9', use: 'Light editorial sections' },
+      { name: 'Oat Beige', hex: '#D8C9B3', use: 'Secondary light, nav text' },
+      { name: 'Muted Sage', hex: '#727765', use: 'Decorative only' },
+      { name: 'Warm White', hex: '#FAF7F0', use: 'Text on dark, inputs' },
+    ] };
+  }
+}
+</script>
+</body>
+</html>

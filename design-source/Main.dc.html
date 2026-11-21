@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Home — The Craft Brewery, Bend, Oregon</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="/_blob/35a35548b87b64c969ab7ab13d4e4c06">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=DM+Serif+Display:ital@0;1&amp;family=DM+Sans:opsz,wght@9..40,400..700&amp;display=swap" rel="stylesheet">
+<style>body{margin:0;background:#20211F}</style>
+</helmet>
+<div class="{{ rootClass }}" style="font-family: var(--fb); color: var(--white); background: var(--char)">
+<a class="skip" href="#main">Skip to content</a>
+<div style="position: sticky; top: 0; z-index: 60; height: 0"><dc-import name="Header" active="home" overlay="{{ true }}" hint-size="100%,88px"></dc-import></div>
+
+<main id="main">
+  <!-- 1 · IMMERSIVE HERO -->
+  <section class="hero" aria-roledescription="carousel" aria-label="The brewery" onMouseEnter="{{ holdOn }}" onMouseLeave="{{ holdOff }}" onFocus="{{ holdOn }}" onBlur="{{ holdOff }}">
+    <div class="slides">
+      <sc-for list="{{ slides }}" as="s" hint-placeholder-count="3">
+        <div class="{{ s.cls }}" aria-hidden="{{ s.hidden }}"><img class="kb" src="{{ s.src }}" alt="{{ s.alt }}" width="1600" height="1000"></div>
+      </sc-for>
+    </div>
+    <div class="shade" aria-hidden="true"></div>
+    <div class="wrap hero-body" style="width: 100%">
+      <div class="stack" style="gap: 26px; max-width: 980px">
+        <p class="label in">Craft brewery · Bend, Oregon</p>
+        <h1 class="d-hero in d1">Crafted with<br>character<span style="color: var(--copper)">.</span></h1>
+        <p class="lead in d2" style="color: var(--oat); max-width: 34em">Discover the craft, character, and brewing spirit behind The Craft Brewery.</p>
+        <div class="row btn-row-m in d3" style="gap: 14px">
+          <a class="btn btn-copper" href="Products.dc.html">Explore Our Beers <svg class="arr" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+          <a class="btn btn-ghost" href="Story.dc.html">Discover Our Brewery</a>
+        </div>
+      </div>
+      <div class="between in d4" style="margin-top: clamp(48px, 7vw, 96px); padding-top: 22px; border-top: 1px solid var(--line-d); align-items: center">
+        <a class="scroll-cue" href="#intro"><i aria-hidden="true"></i>Scroll</a>
+        <p class="xs muted" aria-live="{{ live }}" style="letter-spacing: .14em; text-transform: uppercase">{{ slideNo }} / 03 · {{ slideCap }} · <span style="color: var(--brass)">photo to be supplied</span></p>
+        <div class="row" style="gap: 8px" role="group" aria-label="Hero image controls">
+          <button type="button" class="icon-btn" aria-label="Previous image" onClick="{{ prev }}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"></path></svg></button>
+          <div class="dots">
+            <sc-for list="{{ dots }}" as="d" hint-placeholder-count="3"><button type="button" aria-label="Show image {{ d.n }}" aria-current="{{ d.cur }}" onClick="{{ d.go }}"><span></span></button></sc-for>
+          </div>
+          <button type="button" class="icon-btn" aria-label="Next image" onClick="{{ next }}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></button>
+          <button type="button" class="icon-btn" aria-label="{{ pauseLabel }}" aria-pressed="{{ pausedStr }}" onClick="{{ togglePause }}">
+            <sc-if value="{{ paused }}" hint-placeholder-val="{{ false }}"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 5v14l12-7z"></path></svg></sc-if>
+            <sc-if value="{{ playing }}" hint-placeholder-val="{{ true }}"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"></path></svg></sc-if>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 · BRAND INTRODUCTION -->
+  <section id="intro" class="light grain sec" aria-labelledby="intro-h" style="overflow: hidden">
+    <div class="wrap g12" style="align-items: center">
+      <div class="rv" style="grid-column: 1 / span 5; position: relative">
+        <figure class="ph zoom" style="aspect-ratio: 4 / 5">
+          <img src="/_blob/21bafc3c0faa6c1deeefc789122b13cc" alt="Copper brew kettle with steam rising against a brick wall" width="1000" height="1250" loading="lazy">
+          <span class="corner tl" aria-hidden="true"></span><span class="corner br" aria-hidden="true"></span>
+          <figcaption class="cap">Photo to be supplied</figcaption>
+        </figure>
+        <p aria-hidden="true" style="position: absolute; right: -36px; bottom: -28px; font: 400 clamp(4rem, 9vw, 8rem)/.8 var(--fd); color: transparent; -webkit-text-stroke: 1px var(--copper-d); opacity: .5; pointer-events: none">Bend · OR</p>
+      </div>
+      <div class="stack rv" style="grid-column: 7 / span 6; gap: 26px">
+        <p class="label">Who we are</p>
+        <h2 id="intro-h" class="d-l">Good beer begins with a <span class="ital" style="font-size: .82em">passion</span> for the craft.</h2>
+        <p class="lead">The Craft Brewery is a craft brewery at 4827 Aspen Street in Bend, Oregon: a place where beer is made with care, and where you can come and see it for yourself.</p>
+        <div class="tbs-note small"><span class="tbs" style="margin-bottom: 10px">Brand introduction to be supplied</span><p>Add a short introduction in the brewery’s own words. No founding date, founders or history appear until The Craft Brewery provides them.</p></div>
+        <a class="tlink" href="Story.dc.html" style="align-self: flex-start"><span>Read Our Story</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 · FEATURED PRODUCTS -->
+  <section class="dark grain sec" aria-labelledby="feat-h">
+    <div class="wrap stack" style="gap: clamp(36px, 5vw, 64px)">
+      <div class="between rv">
+        <div class="stack" style="gap: 18px">
+          <p class="label">Featured beers</p>
+          <h2 id="feat-h" class="d-xl">The <span class="ital" style="font-size: .8em">lineup</span></h2>
+        </div>
+        <div class="stack" style="gap: 12px; align-items: flex-end">
+          <span class="tbs">Sample products · names &amp; specs to be supplied</span>
+          <a class="tlink" href="Products.dc.html"><span>Explore All Products</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+        </div>
+      </div>
+      <div class="g12" style="align-items: stretch">
+        <figure class="ph rv" style="grid-column: 1 / span 6; aspect-ratio: 9 / 10; border: 1px solid var(--line-d)">
+          <img src="{{ cur.img }}" alt="{{ cur.alt }}" width="900" height="1100" loading="lazy" style="animation: rise .7s var(--ease) both">
+          <span class="sample">Sample</span>
+          <figcaption class="cap">Product photo to be supplied</figcaption>
+        </figure>
+        <div class="stack rv" style="grid-column: 7 / span 6; gap: 26px; justify-content: space-between">
+          <div class="stack" style="gap: 20px" aria-live="polite">
+            <p class="label plain" style="font-size: .8rem">{{ curNo }} — {{ cur.c }}</p>
+            <h3 class="d-l">{{ cur.n }}</h3>
+            <p class="lead">{{ cur.d }}</p>
+            <dl class="specs" style="margin-top: 6px">
+              <div><dt>ABV</dt><dd class="na">To be supplied</dd></div>
+              <div><dt>IBU</dt><dd class="na">To be supplied</dd></div>
+              <div><dt>Tasting notes</dt><dd class="na">To be supplied</dd></div>
+            </dl>
+          </div>
+          <div class="stack" style="gap: 6px">
+            <p class="meta" style="margin-bottom: 8px">Browse the lineup</p>
+            <sc-for list="{{ lineup }}" as="p" hint-placeholder-count="5">
+              <button type="button" onClick="{{ p.pick }}" aria-pressed="{{ p.on }}" style="display: flex; align-items: center; gap: 18px; width: 100%; min-height: 56px; padding: 10px 0; border: 0; border-top: 1px solid var(--line-d); background: none; cursor: pointer; color: {{ p.color }}; opacity: {{ p.op }}">
+                <span style="font: 400 1rem/1 var(--fd); color: var(--brass); width: 28px">{{ p.no }}</span>
+                <span style="flex: 1; font: 400 1.6rem/1 var(--fd); letter-spacing: .03em; text-align: left">{{ p.n }}</span>
+                <span class="meta">{{ p.c }}</span>
+              </button>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 · THE BREWERY EXPERIENCE -->
+  <section aria-labelledby="exp-h" style="position: relative; background: var(--smoke)">
+    <figure class="ph" style="height: clamp(520px, 52vw, 820px)">
+      <img class="pan" src="/_blob/3f92c4d5df6a6bbb27bfef47606dd98e" alt="Warmly lit brewery bar with a wall of taps, pendant lights and stools" width="1200" height="800" loading="lazy">
+      <figcaption class="cap">Brewery photo to be supplied</figcaption>
+    </figure>
+    <div class="wrap" style="position: relative; margin-top: clamp(-220px, -14vw, -120px); padding-bottom: clamp(64px, 8vw, 120px)">
+      <div class="light grain stack rv" style="margin-left: auto; width: min(640px, 100%); padding: clamp(28px, 4.5vw, 64px); gap: 22px; box-shadow: 0 30px 80px -30px rgba(0,0,0,.7)">
+        <p class="label">The brewery experience</p>
+        <h2 id="exp-h" class="d-l">More than what’s in the <span class="ital" style="font-size: .82em">glass.</span></h2>
+        <p>A brewery is a place you can feel: the warmth of the brewhouse, the shine of steel and copper, the first pour of the day. Come and see where the craft happens.</p>
+        <p class="small"><span class="tbs">Facilities, food &amp; events to be confirmed</span></p>
+        <div class="row btn-row-m"><a class="btn btn-dark" href="Visit.dc.html">Plan Your Visit <svg class="arr" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 · BREWING PHILOSOPHY -->
+  <section class="smoke grain sec" aria-labelledby="phil-h">
+    <div class="wrap stack" style="gap: clamp(48px, 6vw, 88px)">
+      <div class="g12 rv" style="align-items: end">
+        <div class="stack" style="grid-column: 1 / span 8; gap: 18px">
+          <p class="label">Brewing philosophy</p>
+          <h2 id="phil-h" class="d-xl">Rooted in the craft.<br><span style="color: var(--copper-l)">Made with purpose.</span></h2>
+        </div>
+        <div class="stack" style="grid-column: 9 / span 4; gap: 16px">
+          <p class="muted">Three ideas at the heart of good brewing, shared here as themes rather than claims about specific methods.</p>
+          <a class="tlink" href="Process.dc.html" style="align-self: flex-start"><span>Discover Our Process</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+        </div>
+      </div>
+      <ol style="list-style: none; display: flex; flex-direction: column">
+        <li class="g12 rv" style="align-items: center; padding-block: 36px; border-top: 1px solid var(--line-d)">
+          <span class="idx" aria-hidden="true" style="grid-column: 1 / span 2">01</span>
+          <div class="stack" style="grid-column: 3 / span 5; gap: 12px"><h3 class="d-m">Ingredients</h3><p class="muted">Every beer starts with water, malt, hops and yeast. Choosing them well, and treating them with respect, shapes everything that follows.</p></div>
+          <figure class="ph zoom" style="grid-column: 9 / span 4; aspect-ratio: 16 / 10"><img src="/_blob/903f7f489c0daf3be861eebfbeb938d6" alt="Hop cones and malted grain on a wooden surface" width="1000" height="1000" loading="lazy"></figure>
+        </li>
+        <li class="g12 rv" style="align-items: center; padding-block: 36px; border-top: 1px solid var(--line-d)">
+          <span class="idx" aria-hidden="true" style="grid-column: 1 / span 2">02</span>
+          <div class="stack" style="grid-column: 3 / span 5; gap: 12px"><h3 class="d-m">Brewing craftsmanship</h3><p class="muted">Brewing is part science, part instinct: heat, time and patience, guided by people who care how the beer turns out.</p></div>
+          <figure class="ph zoom" style="grid-column: 9 / span 4; aspect-ratio: 16 / 10"><img src="/_blob/457aebf6724f6709ee26f5dde8315cd6" alt="Row of stainless steel fermentation tanks under warm pendant lights" width="1600" height="1000" loading="lazy"></figure>
+        </li>
+        <li class="g12 rv" style="align-items: center; padding-block: 36px; border-top: 1px solid var(--line-d); border-bottom: 1px solid var(--line-d)">
+          <span class="idx" aria-hidden="true" style="grid-column: 1 / span 2">03</span>
+          <div class="stack" style="grid-column: 3 / span 5; gap: 12px"><h3 class="d-m">Attention to detail</h3><p class="muted">Colour, clarity, aroma, the head on the pour. Small things, noticed and adjusted, add up to a beer with character.</p></div>
+          <figure class="ph zoom" style="grid-column: 9 / span 4; aspect-ratio: 16 / 10"><img src="/_blob/c3fa6c011aca315d748c856e7727204c" alt="A flight of four beers from pale gold to near black on a wooden paddle" width="1000" height="1250" loading="lazy"></figure>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 6 · GALLERY PREVIEW -->
+  <section class="dark grain sec" aria-labelledby="gal-h">
+    <div class="wrap stack" style="gap: clamp(32px, 4vw, 56px)">
+      <div class="between rv">
+        <div class="stack" style="gap: 18px"><p class="label">Gallery</p><h2 id="gal-h" class="d-xl">Inside the <span class="ital" style="font-size: .8em">brewery</span></h2></div>
+        <a class="tlink" href="Gallery.dc.html"><span>Explore the Gallery</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+      </div>
+      <div class="g12" style="grid-auto-rows: clamp(120px, 12vw, 190px)">
+        <a href="Gallery.dc.html" class="ph zoom rv" style="grid-column: 1 / span 7; grid-row: span 3"><img src="/_blob/457aebf6724f6709ee26f5dde8315cd6" alt="Fermentation tanks in the brewhouse" width="1600" height="1000" loading="lazy"><span class="cap">Brewhouse</span></a>
+        <a href="Gallery.dc.html" class="ph zoom rv" style="grid-column: 8 / span 5; grid-row: span 2"><img src="/_blob/5b63a385fab88dd08f23ecea429a3c05" alt="Beer being poured from a tap into a glass" width="1600" height="1000" loading="lazy"><span class="cap">The pour</span></a>
+        <a href="Gallery.dc.html" class="ph zoom rv" style="grid-column: 8 / span 2; grid-row: span 2"><img src="/_blob/903f7f489c0daf3be861eebfbeb938d6" alt="Hops and malt" width="1000" height="1000" loading="lazy"></a>
+        <a href="Gallery.dc.html" class="ph zoom rv" style="grid-column: 10 / span 3; grid-row: span 2"><img src="/_blob/e35077752029db648d6e04a43c34e831" alt="Stacked oak barrels" width="1200" height="800" loading="lazy"><span class="cap">Details</span></a>
+        <a href="Gallery.dc.html" class="ph zoom rv" style="grid-column: 1 / span 7; grid-row: span 1"><img src="/_blob/3f92c4d5df6a6bbb27bfef47606dd98e" alt="Bar with a wall of taps" width="1200" height="800" loading="lazy" style="object-position: 50% 30%"></a>
+      </div>
+      <p class="xs muted">All images are illustrated stand-ins until The Craft Brewery supplies real photography.</p>
+    </div>
+  </section>
+
+  <!-- 7 · VISIT CTA -->
+  <section aria-labelledby="visit-h" style="position: relative; overflow: hidden; background: var(--smoke)">
+    <img src="/_blob/4c0eaa3903c036abb74437804a91e27b" alt="" width="1200" height="800" loading="lazy" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .55">
+    <div aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(90deg, rgba(21,22,20,.95) 0%, rgba(21,22,20,.75) 55%, rgba(21,22,20,.4) 100%)"></div>
+    <div class="wrap sec" style="position: relative">
+      <div class="stack rv" style="gap: 28px; max-width: 820px">
+        <p class="label">Plan your visit</p>
+        <h2 id="visit-h" class="d-xl">Your next brewery visit <span style="color: var(--copper-l)">starts here.</span></h2>
+        <div class="cols-3" style="gap: 28px; padding-block: 28px; border-block: 1px solid var(--line-d)">
+          <div class="stack" style="gap: 8px"><p class="meta">Address</p><a href="https://www.google.com/maps/search/?api=1&amp;query=4827+Aspen+Street,+Bend,+OR+97701" style="text-decoration: none; font-size: 1.05rem">4827 Aspen Street<br>Bend, OR 97701, USA</a></div>
+          <div class="stack" style="gap: 8px"><p class="meta">Opening hours</p><span class="tbs" style="align-self: flex-start">Hours to be confirmed</span></div>
+          <div class="stack" style="gap: 6px"><p class="meta">Contact</p><a href="mailto:thecraftbrewery@outlook.com" style="text-decoration: none; word-break: break-all">thecraftbrewery@outlook.com</a><a href="tel:+11828438647" style="text-decoration: none">+1 (182) 843-8647</a><span class="xs" style="color: var(--brass)">Phone pending client verification</span></div>
+        </div>
+        <div class="row btn-row-m">
+          <a class="btn btn-copper" href="https://www.google.com/maps/dir/?api=1&amp;destination=4827+Aspen+Street,+Bend,+OR+97701">Get Directions <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"></path></svg></a>
+          <a class="btn btn-ghost" href="Visit.dc.html">Visit Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<dc-import name="Footer" hint-size="100%,640px"></dc-import>
+<sc-if value="{{ showGate }}" hint-placeholder-val="{{ false }}"><dc-import name="AgeGate" overlay="{{ true }}" hint-size="100%,900px"></dc-import></sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"ageGate":{"editor":"boolean","default":false,"section":"States"},"$preview":{"width":1440,"height":7600}}'>
+class Component extends DCLogic {
+  constructor(p) {
+    super(p);
+    const rm = typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    this.state = { i: 0, paused: !!rm, p: 0 }; this.hold = false;
+  }
+  componentDidMount() { this.timer = setInterval(() => { if (!this.state.paused && !this.hold && !document.hidden) this.setState({ i: (this.state.i + 1) % 3 }); }, 7000); }
+  componentWillUnmount() { clearInterval(this.timer); }
+  renderVals() {
+    const S = [
+      { src: '/_blob/457aebf6724f6709ee26f5dde8315cd6', alt: 'Stainless steel fermentation tanks under warm pendant lights in a brick brewhouse', cap: 'The brewhouse' },
+      { src: '/_blob/5b63a385fab88dd08f23ecea429a3c05', alt: 'Amber beer pouring from a copper tap into a glass', cap: 'The pour' },
+      { src: '/_blob/3f92c4d5df6a6bbb27bfef47606dd98e', alt: 'Bar with a wall of taps under pendant lights', cap: 'The brewery' },
+    ];
+    const P = [
+      { n: 'Sample Lager', c: 'Lager', img: '/_blob/6e0fd21563c40ae7ae8b7a435a5f9384' },
+      { n: 'Sample IPA', c: 'IPA', img: '/_blob/eab2e67dd4e37f7381371c9702abd93f' },
+      { n: 'Sample Ale', c: 'Ale', img: '/_blob/beb7fd2afab6c351a287497441220832' },
+      { n: 'Sample Stout', c: 'Stout', img: '/_blob/fd5d94cc64d56ad329fcecc6db473155' },
+      { n: 'Sample Seasonal', c: 'Seasonal Brew', img: '/_blob/223b102bcac50ab8b86fe40dd4d9ee95' },
+    ].map((x) => ({ ...x, alt: 'Placeholder image: a glass of ' + x.c.toLowerCase(), d: 'A placeholder for a real ' + x.c.toLowerCase() + '. The beer’s name, description and specifications will come from The Craft Brewery.' }));
+    const s = this.state;
+    const go = (i) => this.setState({ i, paused: true });
+    const pad = (n) => String(n).padStart(2, '0');
+    return {
+      rootClass: s.paused ? 'paused' : '',
+      slides: S.map((x, n) => ({ ...x, cls: n === s.i ? 'slide on' : 'slide', hidden: n === s.i ? undefined : 'true' })),
+      dots: S.map((_, n) => ({ n: n + 1, cur: n === s.i ? 'true' : undefined, go: () => go(n) })),
+      slideNo: pad(s.i + 1), slideCap: S[s.i].cap, live: s.paused ? 'polite' : 'off',
+      prev: () => go((s.i + 2) % 3), next: () => go((s.i + 1) % 3),
+      paused: s.paused, playing: !s.paused, pausedStr: s.paused ? 'true' : 'false', pauseLabel: s.paused ? 'Play hero images' : 'Pause hero images',
+      togglePause: () => this.setState({ paused: !s.paused }),
+      holdOn: () => { this.hold = true; }, holdOff: () => { this.hold = false; },
+      cur: P[s.p], curNo: pad(s.p + 1),
+      lineup: P.map((x, n) => ({ ...x, no: pad(n + 1), on: n === s.p ? 'true' : 'false', pick: () => this.setState({ p: n }),
+        color: n === s.p ? 'var(--copper-l)' : 'var(--white)', op: n === s.p ? 1 : 0.72 })),
+      showGate: !!this.props.ageGate,
+    };
+  }
+}
+</script>
+</body>
+</html>

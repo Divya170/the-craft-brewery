@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Gallery — The Craft Brewery</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="/_blob/35a35548b87b64c969ab7ab13d4e4c06">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=DM+Serif+Display:ital@0;1&amp;family=DM+Sans:opsz,wght@9..40,400..700&amp;display=swap" rel="stylesheet">
+<style>body{margin:0;background:#20211F}</style>
+</helmet>
+<div style="font-family: var(--fb); color: var(--white); background: var(--char)">
+<a class="skip" href="#grid">Skip to photos</a>
+<div style="position: sticky; top: 0; z-index: 60; height: 0"><dc-import name="Header" active="gallery" overlay="{{ true }}" hint-size="100%,88px"></dc-import></div>
+
+<main id="main">
+  <section class="smoke grain" aria-labelledby="g-h" style="padding-top: 150px; padding-bottom: clamp(48px, 6vw, 88px); overflow: hidden">
+    <div class="wrap g12" style="align-items: end">
+      <div class="stack" style="grid-column: 1 / span 6; gap: 22px">
+        <p class="label in">Gallery</p>
+        <h1 id="g-h" class="d-hero in d1">Inside<br>the craft<span style="color: var(--copper)">.</span></h1>
+        <p class="lead in d2">Steel, copper, grain and glass: a look around the brewery.</p>
+        <span class="tbs in d3" style="align-self: flex-start">Illustrated stand-ins until real photos are supplied</span>
+      </div>
+      <div class="in d2" style="grid-column: 7 / span 6; display: grid; grid-template-columns: 3fr 2fr; grid-template-rows: 200px 200px; gap: 14px">
+        <figure class="ph" style="grid-row: span 2"><img class="pan" src="/_blob/457aebf6724f6709ee26f5dde8315cd6" alt="Fermentation tanks in the brewhouse" width="1600" height="1000"></figure>
+        <figure class="ph"><img src="/_blob/c3fa6c011aca315d748c856e7727204c" alt="" width="1000" height="1250" style="object-position: 50% 70%"></figure>
+        <figure class="ph"><img src="/_blob/903f7f489c0daf3be861eebfbeb938d6" alt="" width="1000" height="1000" style="object-position: 30% 30%"></figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="grid" class="dark grain sec" aria-labelledby="grid-h" style="padding-top: clamp(40px, 5vw, 72px)">
+    <div class="wrap stack" style="gap: clamp(28px, 4vw, 44px)">
+      <h2 id="grid-h" class="sr-only">Photos</h2>
+      <div class="between" style="align-items: center; padding-bottom: 22px; border-bottom: 1px solid var(--line-d)">
+        <div class="chips" role="group" aria-label="Filter photos">
+          <sc-for list="{{ cats }}" as="c" hint-placeholder-count="6"><button type="button" class="chip" aria-pressed="{{ c.on }}" onClick="{{ c.pick }}">{{ c.label }} <span class="n">{{ c.n }}</span></button></sc-for>
+        </div>
+        <p class="small muted" aria-live="polite">{{ countLabel }}</p>
+      </div>
+      <div class="masonry">
+        <sc-for list="{{ items }}" as="g" hint-placeholder-count="12">
+          <figure style="animation: rise .6s var(--ease) both; animation-delay: {{ g.delay }}ms">
+            <button type="button" class="gitem" aria-haspopup="dialog" aria-label="Open photo: {{ g.alt }}" onClick="{{ g.open }}">
+              <div class="ph" style="aspect-ratio: {{ g.ratio }}"><img src="{{ g.src }}" alt="" width="1200" height="800" loading="lazy" style="object-position: {{ g.pos }}"></div>
+            </button>
+            <figcaption>{{ g.cap }} · <span style="color: var(--brass)">{{ g.cat }}</span></figcaption>
+          </figure>
+        </sc-for>
+      </div>
+      <p class="xs muted">Only categories with photos appear as filters. The main gallery never auto-advances.</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="gc-h" style="position: relative; overflow: hidden; background: var(--smoke)">
+    <img src="/_blob/4c0eaa3903c036abb74437804a91e27b" alt="" width="1200" height="800" loading="lazy" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .45">
+    <div aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(90deg, rgba(21,22,20,.95), rgba(21,22,20,.45))"></div>
+    <div class="wrap sec stack" style="position: relative; gap: 28px; align-items: flex-start">
+      <h2 id="gc-h" class="d-xl">See it <span style="color: var(--copper-l)">in person.</span></h2>
+      <a class="btn btn-copper" href="Visit.dc.html">Plan Your Visit <svg class="arr" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+    </div>
+  </section>
+</main>
+
+<sc-if value="{{ lbOpen }}" hint-placeholder-val="{{ false }}">
+  <div class="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer" onKeyDown="{{ onKey }}">
+    <div class="between wrap" style="align-items: center; padding-block: 18px">
+      <p class="meta" aria-live="polite">{{ lbNo }} / {{ lbTotal }} · {{ lb.cat }}</p>
+      <button type="button" class="icon-btn" aria-label="Close photo viewer" autofocus onClick="{{ close }}"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></button>
+    </div>
+    <div class="lb-stage">
+      <img src="{{ lb.src }}" alt="{{ lb.alt }}" width="1200" height="800" style="object-position: {{ lb.pos }}">
+      <button type="button" class="icon-btn lb-prev" aria-label="Previous photo" onClick="{{ prev }}"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"></path></svg></button>
+      <button type="button" class="icon-btn lb-next" aria-label="Next photo" onClick="{{ next }}"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></button>
+    </div>
+    <div class="wrap" style="padding-block: 18px 28px; text-align: center">
+      <p style="font: 400 1.2rem/1.4 var(--fs)">{{ lb.cap }}</p>
+      <p class="xs muted" style="margin-top: 6px">Use ← → to browse, Esc to close · Photo to be supplied</p>
+    </div>
+  </div>
+</sc-if>
+<dc-import name="Footer" hint-size="100%,640px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":3800}}'>
+class Component extends DCLogic {
+  constructor(p) { super(p); this.state = { cat: 'All', open: -1 }; }
+  renderVals() {
+    const T = '/_blob/457aebf6724f6709ee26f5dde8315cd6', R = '/_blob/3f92c4d5df6a6bbb27bfef47606dd98e', X = '/_blob/4c0eaa3903c036abb74437804a91e27b', B = '/_blob/e35077752029db648d6e04a43c34e831',
+      K = '/_blob/21bafc3c0faa6c1deeefc789122b13cc', I = '/_blob/903f7f489c0daf3be861eebfbeb938d6', F = '/_blob/c3fa6c011aca315d748c856e7727204c', P = '/_blob/5b63a385fab88dd08f23ecea429a3c05',
+      GI = '/_blob/eab2e67dd4e37f7381371c9702abd93f', GS = '/_blob/fd5d94cc64d56ad329fcecc6db473155', GL = '/_blob/6e0fd21563c40ae7ae8b7a435a5f9384';
+    const ALL = [
+      [T, 'Brewery', 'The brewhouse', 'Row of stainless steel fermentation tanks under pendant lights', '16 / 10', '50% 50%'],
+      [F, 'Products', 'A flight to compare', 'Four beers from pale gold to near black on a wooden paddle', '4 / 5', '50% 60%'],
+      [K, 'Brewing Process', 'The kettle', 'Copper brew kettle with steam rising', '4 / 5', '50% 40%'],
+      [I, 'Ingredients', 'Hops and malt', 'Hop cones and malted grain on wood', '1 / 1', '50% 50%'],
+      [R, 'Brewery', 'At the bar', 'Bar with a wall of taps and stools', '3 / 2', '50% 50%'],
+      [P, 'Products', 'The pour', 'Amber beer pouring from a copper tap', '16 / 10', '50% 50%'],
+      [B, 'Details', 'Barrels', 'Oak barrels stacked against brick', '3 / 2', '50% 50%'],
+      [GI, 'Products', 'A hazy pint', 'Glass of golden beer with a thick head', '4 / 5', '50% 50%'],
+      [T, 'Brewing Process', 'Fermentation', 'Close view of a conical fermenter', '3 / 4', '30% 40%'],
+      [X, 'Brewery', 'From the street', 'Brick brewery building at dusk with string lights', '3 / 2', '50% 50%'],
+      [I, 'Ingredients', 'Malted grain', 'Pale malted grain scattered on wood', '4 / 3', '25% 70%'],
+      [GS, 'Products', 'Dark and rich', 'Glass of near-black beer with a cream head', '4 / 5', '50% 50%'],
+      [R, 'Details', 'The taps', 'Row of tap handles in different colours', '16 / 9', '50% 18%'],
+      [GL, 'Products', 'Pale and bright', 'Glass of pale golden beer', '1 / 1', '50% 60%'],
+    ].map(([src, cat, cap, alt, ratio, pos]) => ({ src, cat, cap, alt, ratio, pos }));
+    const ORDER = ['Brewery', 'Brewing Process', 'Products', 'Ingredients', 'Details'];
+    const s = this.state;
+    const list = s.cat === 'All' ? ALL : ALL.filter((g) => g.cat === s.cat);
+    const close = () => this.setState({ open: -1 });
+    const prev = () => this.setState({ open: (s.open - 1 + list.length) % list.length });
+    const next = () => this.setState({ open: (s.open + 1) % list.length });
+    const lb = s.open >= 0 ? list[s.open] : ALL[0];
+    return {
+      cats: [{ label: 'All', key: 'All', n: ALL.length }].concat(ORDER.filter((c) => ALL.some((g) => g.cat === c)).map((c) => ({ label: c, key: c, n: ALL.filter((g) => g.cat === c).length })))
+        .map((c) => ({ ...c, on: s.cat === c.key ? 'true' : 'false', pick: () => this.setState({ cat: c.key, open: -1 }) })),
+      countLabel: list.length + ' photos',
+      items: list.map((g, i) => ({ ...g, delay: Math.min(i, 10) * 50, open: () => this.setState({ open: i }) })),
+      lbOpen: s.open >= 0, lb, lbNo: s.open + 1, lbTotal: list.length, close, prev, next,
+      onKey: (e) => { if (e.key === 'Escape') close(); else if (e.key === 'ArrowLeft') prev(); else if (e.key === 'ArrowRight') next(); },
+    };
+  }
+}
+</script>
+</body>
+</html>

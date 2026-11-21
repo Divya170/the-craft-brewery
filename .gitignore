@@ -1,0 +1,10 @@
+node_modules/
+.next/
+dist/
+*.tsbuildinfo
+database/*.sqlite
+database/*.sqlite-journal
+backend/uploads/*
+!backend/uploads/.gitkeep
+.env
+.env.local

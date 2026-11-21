@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Visit Us — The Craft Brewery, Bend, Oregon</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="/_blob/35a35548b87b64c969ab7ab13d4e4c06">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=DM+Serif+Display:ital@0;1&amp;family=DM+Sans:opsz,wght@9..40,400..700&amp;display=swap" rel="stylesheet">
+<style>body{margin:0;background:#20211F}</style>
+</helmet>
+<div style="font-family: var(--fb); color: var(--white); background: var(--char)">
+<a class="skip" href="#main">Skip to content</a>
+<div style="position: sticky; top: 0; z-index: 60; height: 0"><dc-import name="Header" active="visit" overlay="{{ true }}" hint-size="100%,88px"></dc-import></div>
+
+<main id="main">
+  <section class="hero" aria-labelledby="v-h" style="min-height: clamp(560px, 50vw, 780px)">
+    <div class="slides"><div class="slide on"><img class="kb" src="/_blob/4c0eaa3903c036abb74437804a91e27b" alt="Brick brewery building at dusk with string lights and a roll-up door" width="1200" height="800"></div></div>
+    <div class="shade" aria-hidden="true"></div>
+    <div class="wrap hero-body" style="width: 100%">
+      <div class="stack" style="gap: 24px; max-width: 900px">
+        <p class="label in">Visit us</p>
+        <h1 id="v-h" class="d-hero in d1">Come on in<span style="color: var(--copper)">.</span></h1>
+        <p class="lead in d2" style="color: var(--oat)">Discover The Craft Brewery in Bend, Oregon.</p>
+        <div class="row btn-row-m in d3">
+          <a class="btn btn-copper" href="https://www.google.com/maps/dir/?api=1&amp;destination=4827+Aspen+Street,+Bend,+OR+97701">Get Directions <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"></path></svg></a>
+          <a class="btn btn-ghost" href="#enquire">Send an Enquiry</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCATION + HOURS -->
+  <section class="light grain sec" aria-labelledby="loc-h">
+    <div class="wrap g12" style="align-items: start">
+      <div class="stack rv" style="grid-column: 1 / span 5; gap: 26px">
+        <p class="label">Location</p>
+        <h2 id="loc-h" class="sr-only">Location and opening hours</h2>
+        <address style="font-style: normal">
+          <p class="d-m" style="margin-bottom: 10px">The Craft Brewery</p>
+          <p style="font: 400 1.5rem/1.4 var(--fs)">4827 Aspen Street<br>Bend, OR 97701<br>USA</p>
+        </address>
+        <div class="row" style="gap: 10px">
+          <a class="btn btn-dark btn-sm" href="https://www.google.com/maps/dir/?api=1&amp;destination=4827+Aspen+Street,+Bend,+OR+97701">Get Directions</a>
+          <button type="button" class="btn btn-ghost btn-sm" onClick="{{ copy }}" aria-describedby="copy-msg">
+            <sc-if value="{{ copied }}" hint-placeholder-val="{{ false }}"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg>Copied</sc-if>
+            <sc-if value="{{ notCopied }}" hint-placeholder-val="{{ true }}"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="1"></rect><path d="M16 8V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h3"></path></svg>Copy Address</sc-if>
+          </button>
+          <span id="copy-msg" class="sr-only" aria-live="polite">{{ copyMsg }}</span>
+        </div>
+        <p class="xs muted">Parking and access directions will be added once confirmed by the brewery.</p>
+
+        <div class="stack" style="gap: 14px; margin-top: 18px">
+          <div class="between" style="align-items: center"><p class="label">Opening hours</p><span class="tbs">To be confirmed</span></div>
+          <table class="hours">
+            <caption class="sr-only">Opening hours (to be confirmed)</caption>
+            <tbody>
+              <sc-for list="{{ days }}" as="d" hint-placeholder-count="7"><tr><th scope="row">{{ d }}</th><td>[Hours to be confirmed]</td></tr></sc-for>
+            </tbody>
+          </table>
+          <p class="small muted">Until hours are confirmed, please email or call before visiting. No “open now” status is shown until then.</p>
+        </div>
+      </div>
+
+      <div class="rv" style="grid-column: 7 / span 6; position: sticky; top: 100px">
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=4827+Aspen+Street,+Bend,+OR+97701" aria-label="Map of 4827 Aspen Street, Bend, OR 97701. Opens Google Maps." style="display: block; position: relative; aspect-ratio: 1 / 1; overflow: hidden; background: #D9CFBD; text-decoration: none">
+          <svg viewBox="0 0 600 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%">
+            <rect width="600" height="600" fill="#D9CFBD"></rect>
+            <path d="M380 0c30 90 120 120 220 130v170c-90-10-160 30-200 90-30 50-10 140 30 210H600V0z" fill="#B9BFA6"></path>
+            <path d="M0 420c80-20 150 10 220 60s120 90 160 120H0z" fill="#AFC0C2" opacity=".7"></path>
+            <g fill="none" stroke="#F0E8D9" stroke-linecap="round"><path d="M-10 300h620" stroke-width="18"></path><path d="M300 -10v620" stroke-width="14"></path><path d="M-10 120 610 170" stroke-width="8"></path><path d="M110 -10 180 610" stroke-width="8"></path><path d="M470 -10 440 610" stroke-width="8"></path><path d="M-10 470h620" stroke-width="6"></path></g>
+            <circle cx="300" cy="282" r="64" fill="#B87549" opacity=".18"></circle>
+          </svg>
+          <div style="position: absolute; left: 50%; top: 47%; transform: translate(-50%, -100%); display: flex; flex-direction: column; align-items: center">
+            <div style="background: var(--char); color: var(--white); padding: 12px 16px; margin-bottom: 10px; box-shadow: 0 18px 40px -18px rgba(0,0,0,.6)"><p class="d-s" style="font-size: 1.3rem">The Craft Brewery</p><p class="xs" style="color: var(--oat)">4827 Aspen Street</p></div>
+            <svg width="40" height="52" viewBox="0 0 40 52" aria-hidden="true"><path d="M20 51S2 31 2 19a18 18 0 0 1 36 0c0 12-18 32-18 32z" fill="#B87549"></path><circle cx="20" cy="19" r="7" fill="#151614"></circle></svg>
+          </div>
+          <span style="position: absolute; left: 14px; bottom: 14px; padding: 8px 12px; background: var(--char); color: var(--white); font: 700 .7rem/1 var(--fb); letter-spacing: .16em; text-transform: uppercase">Open in Google Maps ↗</span>
+          <span class="state-tag" style="position: absolute; left: 14px; top: 14px">Live site: interactive Google Map embed</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISITOR INFORMATION + CONTACT -->
+  <section class="dark grain sec" aria-labelledby="info-h">
+    <div class="wrap stack" style="gap: clamp(36px, 5vw, 64px)">
+      <div class="between rv">
+        <div class="stack" style="gap: 18px"><p class="label">Before you come</p><h2 id="info-h" class="d-xl">Visitor <span class="ital" style="font-size: .8em">information</span></h2></div>
+        <p class="muted" style="max-width: 30em">Practical details will appear here as The Craft Brewery confirms them. Nothing below is assumed.</p>
+      </div>
+      <div class="cols-3" style="gap: 0; border-top: 1px solid var(--line-d)">
+        <sc-for list="{{ info }}" as="i" hint-placeholder-count="6">
+          <article class="stack" style="gap: 12px; padding: 28px 28px 32px 0; border-bottom: 1px solid var(--line-d)">
+            <p class="meta">{{ i.no }}</p>
+            <h3 class="d-s">{{ i.t }}</h3>
+            <p class="muted small">{{ i.d }}</p>
+            <sc-if value="{{ i.tbs }}" hint-placeholder-val="{{ true }}"><span class="tbs" style="align-self: flex-start">To be confirmed</span></sc-if>
+          </article>
+        </sc-for>
+      </div>
+
+      <div class="cols-2 rv" style="gap: clamp(20px, 3vw, 40px); margin-top: 12px">
+        <a href="mailto:thecraftbrewery@outlook.com" class="stack" style="gap: 14px; padding: clamp(24px, 3vw, 40px); border: 1px solid var(--line-d); text-decoration: none">
+          <p class="label plain">Email</p>
+          <p class="d-m" style="font-size: clamp(1.6rem, 2.6vw, 2.5rem); word-break: break-all">thecraftbrewery@outlook.com</p>
+          <span class="tlink" style="pointer-events: none"><span>Write to us</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
+        </a>
+        <a href="tel:+11828438647" class="stack" style="gap: 14px; padding: clamp(24px, 3vw, 40px); border: 1px solid var(--line-d); text-decoration: none">
+          <p class="label plain">Phone</p>
+          <p class="d-m" style="font-size: clamp(1.6rem, 2.6vw, 2.5rem)">+1 (182) 843-8647</p>
+          <span class="tbs" style="align-self: flex-start">Number pending client verification</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ENQUIRY FORM -->
+  <section id="enquire" class="oat grain sec" aria-labelledby="enq-h">
+    <div class="wrap g12" style="align-items: start">
+      <div class="stack rv" style="grid-column: 1 / span 4; gap: 20px">
+        <p class="label">Visit enquiry</p>
+        <h2 id="enq-h" class="d-l">Planning a <span class="ital" style="font-size: .82em">visit?</span></h2>
+        <p class="muted">Ask about visiting, a group, or anything else. This sends a message to the brewery; it doesn’t book or confirm a visit. We’ll reply by email.</p>
+      </div>
+      <div class="rv" style="grid-column: 6 / span 7; padding: clamp(24px, 4vw, 48px); background: var(--cream); border: 1px solid var(--line-l)">
+        <sc-if value="{{ showForm }}" hint-placeholder-val="{{ true }}">
+          <form class="form" novalidate onSubmit="{{ submit }}" aria-label="Visit enquiry">
+            <p class="small muted">Fields marked * are required.</p>
+            <sc-if value="{{ hasErrors }}" hint-placeholder-val="{{ false }}">
+              <div class="notice n-err" role="alert" tabindex="-1" ref="{{ setSummary }}"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 7v6M12 16.5h.01"></path></svg><div class="stack small" style="gap: 6px"><b>Please check {{ errCount }} {{ errWord }}:</b><ul style="padding-left: 18px"><sc-for list="{{ errList }}" as="e" hint-placeholder-count="2"><li><a href="#{{ e.id }}" style="color: inherit">{{ e.msg }}</a></li></sc-for></ul></div></div>
+            </sc-if>
+            <div class="f2">
+              <div class="field"><label for="e-name">Name *</label><input id="e-name" class="input" autocomplete="name" value="{{ f.name }}" onChange="{{ on.name }}" onBlur="{{ blur.name }}" aria-invalid="{{ inv.name }}" aria-describedby="e-name-e" required><sc-if value="{{ v.name }}" hint-placeholder-val="{{ false }}"><p class="err" id="e-name-e">{{ v.name }}</p></sc-if></div>
+              <div class="field"><label for="e-email">Email *</label><input id="e-email" type="email" class="input" autocomplete="email" value="{{ f.email }}" onChange="{{ on.email }}" onBlur="{{ blur.email }}" aria-invalid="{{ inv.email }}" aria-describedby="e-email-e" required><sc-if value="{{ v.email }}" hint-placeholder-val="{{ false }}"><p class="err" id="e-email-e">{{ v.email }}</p></sc-if></div>
+            </div>
+            <div class="f2">
+              <div class="field"><label for="e-phone">Phone <span class="opt">(optional)</span></label><input id="e-phone" type="tel" class="input" autocomplete="tel" value="{{ f.phone }}" onChange="{{ on.phone }}" onBlur="{{ blur.phone }}" aria-invalid="{{ inv.phone }}" aria-describedby="e-phone-e"><sc-if value="{{ v.phone }}" hint-placeholder-val="{{ false }}"><p class="err" id="e-phone-e">{{ v.phone }}</p></sc-if></div>
+              <div class="field"><label for="e-type">Enquiry type *</label>
+                <select id="e-type" class="input" value="{{ f.type }}" onChange="{{ on.type }}" onBlur="{{ blur.type }}" aria-invalid="{{ inv.type }}" aria-describedby="e-type-e" required>
+                  <option value="">Choose one…</option><option>Planning a visit</option><option>Group visit</option><option>Our beers</option><option>General question</option><option>Other</option>
+                </select>
+                <sc-if value="{{ v.type }}" hint-placeholder-val="{{ false }}"><p class="err" id="e-type-e">{{ v.type }}</p></sc-if>
+              </div>
+            </div>
+            <div class="field"><label for="e-msg">Message *</label><textarea id="e-msg" class="input" rows="5" value="{{ f.message }}" onChange="{{ on.message }}" onBlur="{{ blur.message }}" aria-invalid="{{ inv.message }}" aria-describedby="e-msg-e e-msg-c" required></textarea><div class="between" style="gap: 8px"><sc-if value="{{ v.message }}" hint-placeholder-val="{{ false }}"><p class="err" id="e-msg-e">{{ v.message }}</p></sc-if><span class="xs muted" id="e-msg-c" style="margin-left: auto">{{ msgCount }} / 1500</span></div></div>
+            <div class="field">
+              <label class="check" for="e-consent" style="text-transform: none; letter-spacing: 0; font: 400 .95rem/1.5 var(--fb)"><input id="e-consent" type="checkbox" checked="{{ f.consent }}" onChange="{{ onConsent }}" aria-invalid="{{ inv.consent }}" aria-describedby="e-consent-e"><span>I agree that The Craft Brewery may use these details to reply to my enquiry. *</span></label>
+              <sc-if value="{{ v.consent }}" hint-placeholder-val="{{ false }}"><p class="err" id="e-consent-e">{{ v.consent }}</p></sc-if>
+            </div>
+            <div aria-hidden="true" style="position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden"><label for="e-web">Website</label><input id="e-web" tabindex="-1" autocomplete="off"></div>
+            <div class="row btn-row-m" style="justify-content: space-between">
+              <p class="xs muted" style="max-width: 26em">Protected against spam. We never share your details.</p>
+              <button type="submit" class="btn btn-copper" disabled="{{ sending }}" aria-busy="{{ sendingStr }}">
+                <sc-if value="{{ sending }}" hint-placeholder-val="{{ false }}"><span class="spin" aria-hidden="true"></span>Sending…</sc-if>
+                <sc-if value="{{ notSending }}" hint-placeholder-val="{{ true }}">Send Enquiry</sc-if>
+              </button>
+            </div>
+          </form>
+        </sc-if>
+
+        <sc-if value="{{ showUnconnected }}" hint-placeholder-val="{{ false }}">
+          <div class="stack" style="gap: 18px" role="status">
+            <h3 class="d-m">Almost there</h3>
+            <div class="notice n-warn"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 8v5M12 16h.01"></path></svg><div class="stack small" style="gap: 6px"><b>Nothing has been sent yet.</b><p>This design isn’t connected to a messaging service. Your enquiry is ready in your email app; just press send there.</p></div></div>
+            <div class="row btn-row-m"><a class="btn btn-copper" href="{{ mailto }}">Open in Your Email App</a><button type="button" class="btn btn-ghost" onClick="{{ back }}">Edit My Enquiry</button></div>
+            <p class="xs muted">Integration point: POST /api/enquiries → show the success state only after a 2xx response.</p>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ showSuccess }}" hint-placeholder-val="{{ false }}">
+          <div class="stack" style="gap: 18px" role="status">
+            <span class="state-tag" style="align-self: flex-start">State preview · shown only after a confirmed send</span>
+            <span style="width: 56px; height: 56px; display: grid; place-items: center; background: var(--char); color: var(--copper-l)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span>
+            <h3 class="d-m">Thanks, your enquiry is on its way.</h3>
+            <p class="muted">We’ll reply to the email address you gave us. This doesn’t book a visit; we’ll confirm any details with you directly.</p>
+            <div class="row btn-row-m"><a class="btn btn-dark" href="Products.dc.html">Explore Our Beers</a><a class="btn btn-ghost" href="https://www.google.com/maps/dir/?api=1&amp;destination=4827+Aspen+Street,+Bend,+OR+97701">Get Directions</a></div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ showError }}" hint-placeholder-val="{{ false }}">
+          <div class="stack" style="gap: 14px">
+            <span class="state-tag" style="align-self: flex-start">State preview · send failed</span>
+            <div class="notice n-err" role="alert"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 7v6M12 16.5h.01"></path></svg><div class="stack small" style="gap: 8px"><b>We couldn’t send your enquiry.</b><p>Your details are still in the form. Please try again, or email us directly.</p><div class="row" style="gap: 10px"><button type="button" class="btn btn-ghost btn-sm">Try Again</button><a class="btn btn-copper btn-sm" href="mailto:thecraftbrewery@outlook.com">Email Us Instead</a></div></div></div>
+          </div>
+        </sc-if>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="vc-h" style="position: relative; overflow: hidden; background: var(--smoke)">
+    <img src="/_blob/3f92c4d5df6a6bbb27bfef47606dd98e" alt="" width="1200" height="800" loading="lazy" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .45">
+    <div aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(0deg, rgba(21,22,20,.95), rgba(21,22,20,.5))"></div>
+    <div class="wrap sec stack" style="position: relative; gap: 28px; align-items: center; text-align: center">
+      <h2 id="vc-h" class="d-xl" style="max-width: 16ch">We look forward to <span style="color: var(--copper-l)">welcoming you.</span></h2>
+      <a class="btn btn-copper" href="https://www.google.com/maps/dir/?api=1&amp;destination=4827+Aspen+Street,+Bend,+OR+97701">Get Directions <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"></path></svg></a>
+    </div>
+  </section>
+</main>
+<dc-import name="Footer" hint-size="100%,640px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"formPreview":{"editor":"enum","options":["live","success","error"],"default":"live","section":"States"},"$preview":{"width":1440,"height":4400}}'>
+class Component extends DCLogic {
+  constructor(p) { super(p); this.state = { f: { name: '', email: '', phone: '', type: '', message: '', consent: false }, touched: {}, submitted: false, status: 'idle', copied: false }; this.summary = null; }
+  validate(f) {
+    const e = {};
+    if (f.name.trim().length < 2) e.name = 'Enter your name.';
+    if (!f.email.trim()) e.email = 'Enter your email so we can reply.';
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(f.email.trim())) e.email = 'Enter an email like name@example.com.';
+    const d = f.phone.replace(/\D/g, '');
+    if (f.phone.trim() && (d.length < 7 || d.length > 15)) e.phone = 'Enter a phone number with 7–15 digits, or leave it blank.';
+    if (!f.type) e.type = 'Choose what your enquiry is about.';
+    if (f.message.trim().length < 10) e.message = 'Add a short message (at least 10 characters).';
+    else if (f.message.length > 1500) e.message = 'Keep your message under 1,500 characters.';
+    if (!f.consent) e.consent = 'Please agree so we can reply to you.';
+    return e;
+  }
+  renderVals() {
+    const s = this.state; const prev = this.props.formPreview ?? 'live';
+    const errs = this.validate(s.f);
+    const keys = ['name', 'email', 'phone', 'type', 'message', 'consent'];
+    const ids = { name: 'e-name', email: 'e-email', phone: 'e-phone', type: 'e-type', message: 'e-msg', consent: 'e-consent' };
+    const v = {}, inv = {}, on = {}, blur = {};
+    keys.forEach((k) => {
+      v[k] = (s.submitted || s.touched[k]) ? (errs[k] || '') : ''; inv[k] = v[k] ? 'true' : 'false';
+      on[k] = (e) => this.setState({ f: Object.assign({}, this.state.f, { [k]: e.target.value }) });
+      blur[k] = () => this.setState({ touched: Object.assign({}, this.state.touched, { [k]: true }) });
+    });
+    const errList = s.submitted ? keys.filter((k) => errs[k]).map((k) => ({ id: ids[k], msg: errs[k] })) : [];
+    const body = 'Hello The Craft Brewery,\n\n' + s.f.message + '\n\n' + s.f.name + (s.f.phone ? '\n' + s.f.phone : '');
+    return {
+      days: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+      info: [
+        { no: '01', t: 'Location', d: '4827 Aspen Street, Bend, OR 97701. Use Get Directions above for live routing.', tbs: false },
+        { no: '02', t: 'Opening hours', d: 'Days and times will be listed above once confirmed.', tbs: true },
+        { no: '03', t: 'Parking', d: 'Where to park when you arrive.', tbs: true },
+        { no: '04', t: 'Accessibility', d: 'Step-free access, restrooms and seating details.', tbs: true },
+        { no: '05', t: 'Groups', d: 'Whether larger groups can visit, and how to arrange it.', tbs: true },
+        { no: '06', t: 'Age requirements', d: 'Who can visit, including any rules for under-21s or children.', tbs: true },
+        { no: '07', t: 'Visitor facilities', d: 'What’s on site for visitors.', tbs: true },
+        { no: '08', t: 'Visitor enquiries', d: 'Questions about visiting? Use the enquiry form below.', tbs: false },
+        { no: '09', t: 'General contact', d: 'Email thecraftbrewery@outlook.com or call the number below.', tbs: false },
+      ],
+      copied: s.copied, notCopied: !s.copied, copyMsg: s.copied ? 'Address copied to clipboard' : '',
+      copy: () => {
+        const a = 'The Craft Brewery, 4827 Aspen Street, Bend, OR 97701, USA';
+        const done = () => { this.setState({ copied: true }); setTimeout(() => this.setState({ copied: false }), 2400); };
+        try { navigator.clipboard.writeText(a).then(done, done); } catch (e) { done(); }
+      },
+      f: s.f, v, inv, on, blur, errList, errCount: errList.length, errWord: errList.length === 1 ? 'thing' : 'things', hasErrors: errList.length > 0,
+      onConsent: (e) => this.setState({ f: Object.assign({}, this.state.f, { consent: e.target.checked }), touched: Object.assign({}, this.state.touched, { consent: true }) }),
+      setSummary: (el) => { this.summary = el; }, msgCount: s.f.message.length,
+      sending: s.status === 'sending', notSending: s.status !== 'sending', sendingStr: s.status === 'sending' ? 'true' : 'false',
+      showForm: prev === 'live' && s.status !== 'unconnected', showUnconnected: prev === 'live' && s.status === 'unconnected',
+      showSuccess: prev === 'success', showError: prev === 'error',
+      mailto: 'mailto:thecraftbrewery@outlook.com?subject=' + encodeURIComponent((s.f.type || 'Enquiry') + ' from the website') + '&body=' + encodeURIComponent(body),
+      back: () => this.setState({ status: 'idle' }),
+      submit: (e) => {
+        e.preventDefault();
+        if (Object.keys(errs).length) { this.setState({ submitted: true }, () => { if (this.summary) this.summary.focus(); }); return; }
+        this.setState({ submitted: true, status: 'sending' });
+        setTimeout(() => this.setState({ status: 'unconnected' }), 1100);
+      },
+    };
+  }
+}
+</script>
+</body>
+</html>

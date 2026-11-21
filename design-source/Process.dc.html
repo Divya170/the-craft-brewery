@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Brewing Process — The Craft Brewery</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="/_blob/35a35548b87b64c969ab7ab13d4e4c06">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=DM+Serif+Display:ital@0;1&amp;family=DM+Sans:opsz,wght@9..40,400..700&amp;display=swap" rel="stylesheet">
+<style>body{margin:0;background:#20211F}</style>
+</helmet>
+<div style="font-family: var(--fb); color: var(--white); background: var(--char)">
+<a class="skip" href="#journey">Skip to the brewing journey</a>
+<div style="position: sticky; top: 0; z-index: 60; height: 0"><dc-import name="Header" active="process" overlay="{{ true }}" hint-size="100%,88px"></dc-import></div>
+
+<main id="main">
+  <section class="hero" aria-labelledby="pr-h" style="min-height: clamp(560px, 52vw, 820px)">
+    <div class="slides"><div class="slide on"><img class="kb" src="/_blob/21bafc3c0faa6c1deeefc789122b13cc" alt="Copper brew kettle with steam rising" width="1000" height="1250" style="object-position: 50% 40%"></div></div>
+    <div class="shade" aria-hidden="true"></div>
+    <div class="wrap hero-body" style="width: 100%">
+      <div class="stack" style="gap: 24px; max-width: 980px">
+        <p class="label in">Brewing process</p>
+        <h1 id="pr-h" class="d-hero in d1">The art behind<br>every brew<span style="color: var(--copper)">.</span></h1>
+        <a class="scroll-cue in d2" href="#journey" style="align-self: flex-start; margin-top: 12px"><i aria-hidden="true"></i>Follow the journey</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="light grain sec" aria-labelledby="intro-h">
+    <div class="wrap g12" style="align-items: start">
+      <div class="stack rv" style="grid-column: 1 / span 5; gap: 18px">
+        <p class="label">Craft brewing, simply</p>
+        <h2 id="intro-h" class="d-l">Four ingredients. <span class="ital" style="font-size: .82em">Endless character.</span></h2>
+      </div>
+      <div class="stack rv" style="grid-column: 7 / span 6; gap: 20px">
+        <p style="font: 400 1.4rem/1.5 var(--fs)">At its heart, beer is grain, water, hops and yeast, transformed by heat, time and care.</p>
+        <p class="muted">Craft brewers make beer in smaller batches and pay close attention at every step. The journey below follows the general path any brewery takes, from choosing ingredients to filling the keg.</p>
+        <p class="tbs-note small"><span class="tbs" style="margin-bottom: 10px">General brewing process</span><br>This describes brewing in general, not The Craft Brewery’s specific equipment, recipes or methods. Those details can be added once confirmed.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="journey" class="dark grain sec" aria-labelledby="j-h">
+    <div class="wrap stack" style="gap: clamp(28px, 4vw, 48px)">
+      <div class="between rv">
+        <div class="stack" style="gap: 18px"><p class="label">The brewing journey</p><h2 id="j-h" class="d-xl">Seven <span class="ital" style="font-size: .8em">stages</span></h2></div>
+        <p class="small muted" aria-live="polite">Stage {{ activeNo }} of 7 · {{ activeName }}</p>
+      </div>
+      <div class="tl" ref="{{ setTl }}">
+        <div class="tl-line" aria-hidden="true"><div class="tl-fill" style="height: {{ fill }}%"></div></div>
+        <ol style="list-style: none">
+          <sc-for list="{{ stages }}" as="s" hint-placeholder-count="7">
+            <li class="{{ s.cls }}">
+              <span class="node" aria-hidden="true">{{ s.no }}</span>
+              <figure class="ph zoom s-media" style="aspect-ratio: 16 / 11; border: 1px solid var(--line-d)"><img src="{{ s.img }}" alt="{{ s.alt }}" width="1200" height="800" loading="lazy" style="object-position: {{ s.pos }}"><figcaption class="cap">Photo to be supplied</figcaption></figure>
+              <div class="stack s-text" style="gap: 14px; padding-inline: clamp(0px, 2vw, 24px)">
+                <p class="meta">Stage {{ s.no }}</p>
+                <h3 class="d-m">{{ s.t }}</h3>
+                <p class="muted" style="max-width: 30em">{{ s.d }}</p>
+                <button type="button" class="tlink" aria-expanded="{{ s.openStr }}" aria-controls="more-{{ s.no }}" onClick="{{ s.toggle }}"><span>{{ s.btn }}</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="transform: rotate({{ s.rot }}deg)"><path d="M6 9l6 6 6-6"></path></svg></button>
+                <div id="more-{{ s.no }}" class="{{ s.exCls }}"><div><p class="small" style="color: var(--oat); max-width: 30em; padding-top: 4px">{{ s.more }}</p></div></div>
+              </div>
+            </li>
+          </sc-for>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="oat grain sec" aria-labelledby="ing-h">
+    <div class="wrap stack" style="gap: clamp(36px, 5vw, 56px)">
+      <div class="between rv">
+        <div class="stack" style="gap: 18px"><p class="label">Ingredients</p><h2 id="ing-h" class="d-xl">The <span class="ital" style="font-size: .8em">building blocks</span></h2></div>
+        <p class="muted" style="max-width: 30em">Their general roles in brewing. Specific varieties or suppliers are shown only once The Craft Brewery confirms them.</p>
+      </div>
+      <div class="cols-4">
+        <sc-for list="{{ ingredients }}" as="i" hint-placeholder-count="4">
+          <article class="stack rv" style="gap: 16px">
+            <figure class="ph zoom" style="aspect-ratio: 3 / 4"><img src="{{ i.img }}" alt="{{ i.alt }}" width="1000" height="1000" loading="lazy" style="object-position: {{ i.pos }}"></figure>
+            <p class="meta">{{ i.no }}</p>
+            <h3 class="d-m">{{ i.t }}</h3>
+            <p class="muted">{{ i.d }}</p>
+          </article>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="pc-h" style="position: relative; overflow: hidden; background: var(--smoke)">
+    <img src="/_blob/457aebf6724f6709ee26f5dde8315cd6" alt="" width="1600" height="1000" loading="lazy" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .5">
+    <div aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(0deg, rgba(21,22,20,.95), rgba(21,22,20,.5))"></div>
+    <div class="wrap sec stack" style="position: relative; gap: 28px; align-items: flex-start">
+      <p class="label">Visit</p>
+      <h2 id="pc-h" class="d-xl">See the craft <span style="color: var(--copper-l)">come to life.</span></h2>
+      <div class="row btn-row-m"><a class="btn btn-copper" href="Visit.dc.html">Visit Us <svg class="arr" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a><a class="btn btn-ghost" href="Products.dc.html">Explore Our Beers</a></div>
+    </div>
+  </section>
+</main>
+<dc-import name="Footer" hint-size="100%,640px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":6000}}'>
+class Component extends DCLogic {
+  constructor(p) { super(p); this.state = { open: {}, progress: 0 }; this.tl = null; this.onScroll = this.onScroll.bind(this); }
+  componentDidMount() { window.addEventListener('scroll', this.onScroll, { passive: true }); window.addEventListener('resize', this.onScroll); this.onScroll(); }
+  componentWillUnmount() { window.removeEventListener('scroll', this.onScroll); window.removeEventListener('resize', this.onScroll); }
+  onScroll() {
+    if (!this.tl) return;
+    const r = this.tl.getBoundingClientRect(); const vh = window.innerHeight || 800;
+    const p = Math.max(0, Math.min(1, (vh * 0.6 - r.top) / Math.max(1, r.height)));
+    if (Math.abs(p - this.state.progress) > 0.005) this.setState({ progress: p });
+  }
+  renderVals() {
+    const T = '/_blob/457aebf6724f6709ee26f5dde8315cd6', K = '/_blob/21bafc3c0faa6c1deeefc789122b13cc', I = '/_blob/903f7f489c0daf3be861eebfbeb938d6', B = '/_blob/e35077752029db648d6e04a43c34e831', F = '/_blob/c3fa6c011aca315d748c856e7727204c', P = '/_blob/5b63a385fab88dd08f23ecea429a3c05';
+    const S = [
+      ['Ingredient selection', 'Every beer begins with choosing malt, hops, yeast and water to suit the style being brewed.', 'The balance of grains shapes colour and body, the hops shape bitterness and aroma, and the yeast strain adds its own character.', I, 'Hop cones and malted grain', '50% 50%'],
+      ['Mashing', 'Crushed malt is steeped in hot water, where natural enzymes turn starches into fermentable sugars. The sweet liquid is called wort.', 'Brewers often hold the mash in the range of about 145–158°F; small changes in temperature affect how full-bodied or dry the finished beer is.', K, 'Copper brew kettle', '50% 55%'],
+      ['Lautering', 'The sweet wort is separated from the spent grain, and the grain bed is rinsed with hot water to collect the remaining sugars.', 'That rinse is called sparging. The spent grain left behind is often reused, for example as animal feed or compost.', T, 'Stainless steel brewing vessels', '30% 50%'],
+      ['Boiling', 'The wort is brought to a rolling boil, and hops are added along the way.', 'Hops added early contribute bitterness; hops added near the end keep more of their aroma. Boiling also sterilises the wort before fermentation.', K, 'Kettle with steam rising', '50% 20%'],
+      ['Fermentation', 'Cooled wort meets yeast, which turns sugars into alcohol and carbon dioxide over days or weeks.', 'Ales usually ferment warmer and faster; lagers ferment cooler and take longer, which tends to give a cleaner, crisper taste.', T, 'Fermentation tanks', '70% 50%'],
+      ['Conditioning', 'The young beer rests and matures. Flavours round out, the beer clears, and carbonation is adjusted.', 'Some beers condition for a short time in tanks; others age for longer, sometimes in barrels, to develop deeper character.', B, 'Oak barrels stacked in rows', '50% 50%'],
+      ['Packaging', 'Finished beer is moved into kegs, cans or bottles and kept cold to stay fresh.', 'How and where a brewery packages and serves its beer varies. The Craft Brewery’s own formats will be added once confirmed.', P, 'Beer pouring from a tap into a glass', '55% 50%'],
+    ];
+    const s = this.state; const n = S.length;
+    const active = Math.min(n - 1, Math.floor(s.progress * n));
+    return {
+      setTl: (el) => { this.tl = el; },
+      fill: Math.round(s.progress * 100), activeNo: active + 1, activeName: S[active][0],
+      stages: S.map((x, i) => {
+        const open = !!s.open[i];
+        return {
+          no: String(i + 1).padStart(2, '0'), t: x[0], d: x[1], more: x[2], img: x[3], alt: x[4], pos: x[5],
+          cls: 'stage rv' + (i % 2 ? ' flip' : '') + (i < active ? ' done' : i === active ? ' active' : ''),
+          openStr: open ? 'true' : 'false', btn: open ? 'Less' : 'More about ' + x[0].toLowerCase(), rot: open ? 180 : 0,
+          exCls: open ? 'expand open' : 'expand',
+          toggle: () => this.setState({ open: Object.assign({}, s.open, { [i]: !open }) }),
+        };
+      }),
+      ingredients: [
+        { no: '01', t: 'Water', d: 'Most of what’s in the glass. Its minerals influence how a beer tastes and feels.', img: P, alt: 'Beer being poured', pos: '50% 60%' },
+        { no: '02', t: 'Malt', d: 'Malted grain, usually barley, supplies the sugars, colour and much of the body.', img: I, alt: 'Malted grain', pos: '30% 70%' },
+        { no: '03', t: 'Hops', d: 'Flowers that bring bitterness to balance the malt, plus aroma and flavour.', img: I, alt: 'Hop cones', pos: '20% 20%' },
+        { no: '04', t: 'Yeast', d: 'The living ingredient that ferments sugar into alcohol and adds its own character.', img: F, alt: 'A flight of beers', pos: '50% 70%' },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

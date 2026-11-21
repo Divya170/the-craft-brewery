@@ -1,0 +1,91 @@
+/* Admin panel — charcoal & copper, the site palette in a denser layout. */
+.adm{min-height:100vh;display:flex;flex-wrap:wrap;background:#F4EFE6;color:#1E1F1C;font-family:var(--font-body),Inter,system-ui,sans-serif}
+.adm-side{flex:0 0 248px;background:#1E1F1C;color:#D6CCBC;display:flex;flex-direction:column;padding:24px 16px;position:sticky;top:0;height:100vh}
+.adm-side a{color:#D6CCBC;text-decoration:none}
+.adm-brand{font-family:var(--font-display),Georgia,serif;font-size:24px;color:#F4EFE6;padding:0 10px 24px;border-bottom:1px solid rgba(232,220,201,.18);margin-bottom:16px}
+.adm-brand small{display:block;font-family:var(--font-body),sans-serif;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:#C98A4B;margin-top:6px}
+.adm-nav{display:flex;flex-direction:column;gap:2px}
+.adm-nav a{display:flex;justify-content:space-between;align-items:center;padding:10px 12px;font-size:14px;border-radius:2px;min-height:40px}
+.adm-nav a:hover{background:rgba(248,246,240,.06);color:#fff}
+.adm-nav a[aria-current="page"]{background:rgba(201,138,75,.18);color:#fff}
+.adm-badge{background:#C98A4B;color:#1E1F1C;font-size:11px;font-weight:700;border-radius:2px;padding:2px 8px}
+.adm-main{flex:1 1 640px;min-width:0;padding:clamp(20px,3vw,40px)}
+.adm-top{display:none}
+@media (max-width:900px){.adm-side{display:none}.adm-side.open{display:flex;position:fixed;inset:0 auto 0 0;z-index:50;width:280px;height:100vh}.adm-top{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;background:#1E1F1C;color:#F4EFE6;width:100%;position:sticky;top:0;z-index:40}.adm-top button{background:transparent;border:1px solid rgba(248,246,240,.4);color:#F4EFE6;min-height:40px;padding:0 14px;cursor:pointer}}
+.adm-h1{font-family:var(--font-display),Georgia,serif;font-weight:500;font-size:clamp(30px,3vw,40px);margin:0;line-height:1.1}
+.adm-sub{color:#6B6359;font-size:14px;margin-top:6px;line-height:1.6}
+.adm-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:16px;margin-bottom:24px}
+.adm-card{background:#fff;border:1px solid #D6CCBC;padding:20px;border-radius:2px}
+.adm-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px}
+.adm-stat p:first-child{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#6B6359;font-weight:600}
+.adm-stat p:last-child{font-family:var(--font-display),Georgia,serif;font-size:44px;line-height:1;margin-top:10px}
+.adm-toolbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:16px}
+.adm-toolbar .input{min-height:42px;width:auto;flex:1 1 220px;font-size:14px}
+.adm-toolbar select.input{flex:0 1 200px}
+.adm-table-wrap{overflow-x:auto;background:#fff;border:1px solid #D6CCBC}
+.adm-table{width:100%;border-collapse:collapse;font-size:14px}
+.adm-table th{text-align:left;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#6B6359;font-weight:600;padding:12px 14px;border-bottom:1px solid #D6CCBC;white-space:nowrap;background:#F4EFE6}
+.adm-table td{padding:12px 14px;border-bottom:1px solid #E6DDCF;vertical-align:top}
+.adm-table tr:last-child td{border-bottom:0}
+.adm-table tr.clickable{cursor:pointer}
+.adm-table tr.clickable:hover td{background:#FFFDF7}
+.adm-table tr.selected td{background:#EFE6D6}
+.pill{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:3px 9px;border-radius:2px;border:1px solid #D6CCBC;white-space:nowrap}
+.pill-new{background:#1E1F1C;color:#F4EFE6;border-color:#1E1F1C}
+.pill-responded{background:#E8EFE6;color:#2F5130;border-color:#BFD2BC}
+.pill-confirmed{background:#E2F0EC;color:#1E5A47;border-color:#AFD3C6}
+.pill-declined{background:#F6E1DD;color:#8A2F24;border-color:#E5B5AC}
+.pill-archived{background:#E6DDCF;color:#6B6359}
+.pill-on{background:#E8EFE6;color:#2F5130;border-color:#BFD2BC}
+.pill-off{background:#E6DDCF;color:#6B6359}
+.pill-todo{background:#FFFDF7;color:#6E5F1E;border:1px dashed #8C7A2E}
+.adm-btn{border-radius:2px!important;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:40px;padding:0 16px;font:600 12px/1 var(--font-body),Inter,sans-serif;letter-spacing:.08em;text-transform:uppercase;border:1px solid #1E1F1C;background:#1E1F1C;color:#F4EFE6;cursor:pointer;border-radius:2px;text-decoration:none}
+.adm-btn:hover{background:#294638;color:#fff}
+.adm-btn[disabled]{opacity:.5;cursor:not-allowed}
+.adm-btn.ghost{background:transparent;color:#1E1F1C}
+.adm-btn.ghost:hover{background:#1E1F1C;color:#F4EFE6}
+.adm-btn.danger{background:#A3362A;border-color:#A3362A}
+.adm-btn.danger.ghost{background:transparent;color:#A3362A}
+.adm-btn.danger.ghost:hover{background:#A3362A;color:#fff}
+.adm-btn.sm{min-height:34px;padding:0 12px;font-size:11px}
+.drawer-back{position:fixed;inset:0;background:rgba(24,24,22,.45);z-index:60}
+.drawer-head{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:18px 22px;border-bottom:1px solid #D6CCBC;background:#fff}
+.drawer-body{flex:1;overflow-y:auto;padding:22px;display:flex;flex-direction:column;gap:18px}
+.drawer-foot{display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;padding:16px 22px;border-top:1px solid #D6CCBC;background:#fff}
+.adm .field label{font-size:13px}
+.adm .input{min-height:44px;font-size:15px}
+.adm textarea.input{min-height:110px}
+.check{display:flex;gap:10px;align-items:flex-start;font-size:14px;cursor:pointer}
+.check input{width:18px;height:18px;margin-top:2px;accent-color:#1E1F1C}
+.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);z-index:90;background:#1E1F1C;color:#F4EFE6;padding:12px 18px;font-size:14px;box-shadow:0 10px 30px rgba(0,0,0,.2);max-width:calc(100% - 32px)}
+.toast.error{background:#A3362A}
+.adm-empty{padding:48px 20px;text-align:center;color:#6B6359;background:#fff;border:1px solid #D6CCBC}
+.thumb{width:56px;height:42px;object-fit:cover;display:block;background:#D6CCBC}
+.thumb-ph{width:56px;height:42px;background:#D6CCBC repeating-linear-gradient(135deg,rgba(41,42,39,.08) 0 1px,transparent 1px 8px)}
+.pager{display:flex;gap:8px;align-items:center;justify-content:flex-end;margin-top:14px;font-size:14px;color:#6B6359}
+.login-wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;background:#1E1F1C}
+.login-card{width:min(420px,100%);background:#F4EFE6;padding:clamp(28px,5vw,44px)}
+
+.adm-table-wrap,.adm-empty{border-radius:2px}
+.adm .input{border-radius:2px}
+.drawer-adm{position:fixed;top:0;right:0;bottom:0;width:min(560px,100%);background:#F4EFE6;z-index:61;display:flex;flex-direction:column;box-shadow:-20px 0 40px rgba(0,0,0,.12)}
+.tabs{display:flex;gap:6px;margin-bottom:18px;flex-wrap:wrap}
+
+/* Detail lists */
+.res-when{font-family:var(--font-display),Georgia,serif;font-size:20px;line-height:1.1}
+.res-today{display:inline-block;margin-left:6px;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:#C98A4B;color:#1E1F1C;padding:2px 6px;border-radius:2px}
+.adm-toolbar input[type=date].input{flex:0 1 170px}
+.adm-dl{display:grid;grid-template-columns:auto 1fr;gap:10px 20px;margin:0;font-size:15px}
+.adm-dl dd{margin:0;word-break:break-word}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+/* helpers the admin shares with the old site stylesheet */
+.serif,.disp{font-family:var(--font-display),Georgia,serif}
+.label{font:600 .75rem/1.3 var(--font-body),sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#79563F}
+.notice-error{background:#FBEAE5;color:#7A2A20;border:1.5px solid #E8B9AE;border-radius:8px;padding:12px 14px}
+.req{color:#A3362A}
+.sr{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.ph{display:grid;place-items:center;background:#E6DDCF;border:1.5px dashed #D6CCBC;border-radius:8px}
+.ph-tag{font-size:12px;color:#5E4230;padding:0 12px;text-align:center}
+.cover-mini{width:40px;aspect-ratio:2/3;border-radius:2px 4px 4px 2px;flex:0 0 auto}
+.adm .hint{font-size:13px;color:#6B6359;line-height:1.5;margin-top:4px}
+.adm .field label{font:600 14px/1.3 var(--font-body),system-ui,sans-serif;letter-spacing:0;text-transform:none}
